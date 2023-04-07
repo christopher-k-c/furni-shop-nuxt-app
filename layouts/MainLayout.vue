@@ -1,10 +1,9 @@
 <template>
-    <TopNav>
+    <TopNav class="z-30">
         
     </TopNav>
-    <div>
 
-    </div>
+    <Hero></Hero>
 </template>
 
 <script>
