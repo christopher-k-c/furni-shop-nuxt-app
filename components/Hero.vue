@@ -1,20 +1,25 @@
-
-
-
 <template>
-    <div>
-      <!-- Add other content as needed -->
-      <HeroSection />
+  <div class="relative h-screen">
+
+    <div class="absolute inset-0 w-full ">
+      <img src="../assets/images/5.jpg" alt="Hero Image" class="object-cover h-full w-full" />
     </div>
-  </template>
+    <div class="absolute inset-0 flex justify-center items-center backdrop-filter backdrop-blur">
+      <div class="text-center px-2">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-cyan-950">Create modern interiors with us</h1>
+        <p class="text-xl text-slate-90 mt-8 ">Experience elegant and luxurious interior design by our professional designers</p>
+        <button class="bg-black w-[150px] h-[40px] text-white mt-8">Learn more!</button>
+      </div>
+    </div>
+  </div>
+</template>
   
   <script>
-  import HeroSection from '@/components/HeroSection.vue';
+
   
   export default {
-    components: {
-      HeroSection
-    }
+
+
   };
   </script>
   
