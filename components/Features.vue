@@ -2,7 +2,7 @@
     <div class="flex flex-col justify-center items-center bg-slate-100 py-16">
         <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight pb-16">What we offer...</h1>
 
-        <ul class="flex md:flex-row flex-col justify-between sm:w-3/4 w-full">
+        <ul class="flex md:flex-row flex-col justify-between sm:w-11/12 w-full">
             <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4 bg-slate-400/30 flex-1"> 
 
                 <div class="w-full h-[250px]">

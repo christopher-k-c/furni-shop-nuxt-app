@@ -1,54 +1,85 @@
-<template>
-    <div class="flex flex-col justify-center items-center bg-white py-8">
+<template >
+    <div class="flex flex-col justify-center items-center bg-white py-8 ">
         <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight ">Our Pricing</h1>
+       
+        <div class="flex md:flex-row flex-col justify-center items-center w-11/12 flex-shrink-0">
+            <div v-for="(des, indx) in priceList" :key="indx" class="rounded-lg bg-cyan-950 text-slate-100 text-center m-4 w-full p-8 space-y-4 " >
+                <h1 class="text-3xl sm:text-4xl">{{ des.priceName }}</h1>
+                <h3 class="text-slate-400">{{ des.subDescription }}</h3>
+                <h1 class="">£ {{ des.priceType }}</h1>
+                <ul class="space-y-4 text-left">
+                    <li v-for="(content, index) in des.contents" :key="index">
+                        <div v-if="content.boo" class="flex items-start space-x-1">
+                            <img src="https://img.icons8.com/color/48/null/checkmark--v1.png" alt="tick" :style="{ width: '20px', height:'20px' }">
+                            <p>{{ content.txt }}: <span>{{ content.info }}</span></p>
+                        </div>
+                        <div v-else="content.boo" class="flex items-start space-x-1">
+                            <img src="https://img.icons8.com/color/48/null/delete-sign--v1.png" alt="cross" :style="{ width: '20px', height:'20px'}" class="mt-1"/>
+                            <p class="text-slate-500">{{ content.txt }}: <span>{{ content.info }}</span></p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="bg-black text-white p-2 mt-4"> Get Started </button>
 
-        <ul class="flex md:flex-row flex-col justify-between w-3/4 ">
-            <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4 bg-slate-400/30 flex-1"> 
+            </div>
+        </div>
 
-                <div class="w-full h-1/2">
-                    <img :src="item.featureImg" :alt="item.featureName" class="w-full h-full object-cover">
-                </div>
-                <Icon :name="item.featureIcon" size="40" class="m-2"/>
-                <h4 class="m-2 text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-tight md:leading-tight ">{{ item.featureName }}</h4>
-                <p class="m-2">{{ item.featureDescription }}</p>
 
-                
-            </li>
-        </ul>
+
     </div>
+   
 </template>
 
 <script>
-// ES6 module syntax to import the images directly; @ refers to root directory
-import img1 from "@/assets/images/2.webp";
-import img2 from "@/assets/images/3.jpeg";
-import img3 from "@/assets/images/4.jpeg";
+
     export default {
-        name: "features-list",
+        name: "price-list",
         data(){
             return {
-                featuresList: [
+                priceList: [
                     {
                         id: 1,
-                        featureName: "Our Locations",
-                        featureDescription: "Discover our nearest showroom - with 10+ locations across the UK.",
-                        featureIcon: "fa-map-marker",
-                        featureImg: img1,
+                        priceName: "Buy",
+                        subDescription: "Best option for one time purchase",
+                        priceType: "Fixed",
+                        contents:[
+                            {id: 2, boo: true, txt: "shipping", info: "Free Shipping"},
+                            {id: 3, boo: false, txt: "design", info: "Custom Designs"},
+                            {id: 4, boo: false, txt: "flexibility", info: "Flexible Schedules"},
+                            {id: 5, boo: false, txt: "setup", info: "Professional Installation"},
+                            {id: 6, boo: false, txt: "replacements", info: "12 Month Warranty"},
+                            {id: 7, boo: false, txt: "sustainable", info: "Circular ecosystem"},
+                        ]
+
                     },
                     {
                         id: 2,
-                        featureName: "Free Samples",
-                        featureDescription: "Choose from over 100 fab fabrics and we'll pop them in the post with a little surprise.",
-                        featureIcon: "fa-envelope",
-                        featureImg: img2,
+                        priceName: "Lease",
+                        subDescription: "Relevant for short term tenants",
+                        priceType: "Variable",
+                        contents:[
+                            {id: 2, boo: true, txt: "shipping", info: "Free Shipping"},
+                            {id: 3, boo: true, txt: "design", info: "Custom Designs"},
+                            {id: 4, boo: true, txt: "flexibility", info: "Flexible Schedules"},
+                            {id: 5, boo: false, txt: "setup", info: "Professional Installation"},
+                            {id: 6, boo: false, txt: "replacements", info: "24 Month Warranty"},
+                            {id: 7, boo: false, txt: "sustainable", info: "Circular ecosystem"},
+                        ]
                     },
                     {
                         id: 3,
-                        featureName: "Free Brochures",
-                        featureDescription: "Kick back, put your feet up and sample some tasty morsels from our brochure.",
-                        featureIcon: "fa-book",
-                        featureImg: img3,
-                    }
+                        priceName: "Subscription",
+                        subDescription: "Essential for long term rentals",
+                        priceType: "Variable",
+                        contents:[
+                            {id: 2, boo: true, txt: "shipping", info: "Free Shipping"},
+                            {id: 3, boo: true, txt: "design", info: "Custom Designs"},
+                            {id: 4, boo: true, txt: "flexibility", info: "Flexible Schedules"},
+                            {id: 5, boo: true, txt: "setup", info: "Professional Installation"},
+                            {id: 6, boo: true, txt: "replacements", info: "24 Month Warranty"},
+                            {id: 7, boo: true, txt: "sustainable", info: "Circular ecosystem"},
+                        ]
+                    },
                 ]
 
             }
@@ -61,3 +92,5 @@ import img3 from "@/assets/images/4.jpeg";
 <style lang="scss" scoped>
 
 </style>
+
+
