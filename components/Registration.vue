@@ -29,7 +29,7 @@
         <!-- Define the input type, set id and bind input to the form object -->
         <input type="email" id="email" v-model="registration.email" class="rounded-sm w-1/2">
 
-        <label for="password" class="font-bold text-slate-200">
+        <label for="password" class="font-bold text-slate-200" name="Registration" id="Registration">
             Password:
         </label>
         <!-- Define the input type, set id and bind input to the form object -->

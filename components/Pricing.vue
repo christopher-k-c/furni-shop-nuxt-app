@@ -1,5 +1,5 @@
 <template >
-    <div class="flex flex-col justify-center items-center py-16 relative ">
+    <div class="flex flex-col justify-center items-center py-16 relative " name="Pricing" id="Pricing">
         
         <div class="p-8 mb-16 rounded-lg backdrop-blur bg-cyan-950/50 font-bold text-white">
             <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">Our Pricing</h1>

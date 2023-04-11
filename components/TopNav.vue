@@ -10,7 +10,7 @@
         <ul class="list-none md:flex hidden justify-end items-center flex-1">
             <li  v-for="item in NaviagtionList"  :key="item" 
             class="font-poppins font-normal cursor-pointer text-[16px] text-cyan-950 px-4">
-                {{ item }}
+            <a :href="'#' + item">{{ item }}</a>
             </li>
         </ul>
         <!-- Icon -->
@@ -23,7 +23,9 @@
             <Icon name="fa-times" size="20" @click="toggle" class="fixed top-7 right-6"/>
             <ul class="flex flex-col justify-center items-center h-full w-full">
                 <li v-for="item in NaviagtionList" :key="item" class="text-[25px] py-4">
-                    {{ item }}
+                    <a :href="`#${item}`">
+                        {{ item }}
+                    </a>
                 </li>
             </ul>
         </div>

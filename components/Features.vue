@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-center items-center bg-cyan-950 py-16">
+    <div class="flex flex-col justify-center items-center bg-cyan-950 py-16" name="Features" id="Features">
 
 
         <div class="p-8 mb-16 rounded-lg backdrop-blur bg-slate-100/50 font-bold text-white">
