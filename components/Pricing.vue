@@ -1,11 +1,12 @@
 <template >
-    <div class="flex flex-col justify-center items-center  py-8 relative ">
+    <div class="flex flex-col justify-center items-center py-16 relative ">
         
-        
-        <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight ">Our Pricing</h1>
+        <div class="p-8 mb-16 rounded-lg backdrop-blur bg-cyan-950/50 font-bold text-white">
+            <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">Our Pricing</h1>
+        </div>
        <!-- flex-shrink-0 flex-grow w-full  -->
         <div class="flex lg:flex-row flex-col justify-center items-center w-11/12 space-y-4 sm:space-y-0">
-            <div v-for="(des, indx) in priceList" :key="indx" class=" rounded-lg backdrop-blur bg-white/50 text-slate-900 text-center p-8 space-y-4 w-full h-auto sm:w-[400px] sm:h-[700px] sm:m-4" >
+            <div v-for="(des, indx) in priceList" :key="indx" class=" rounded-lg backdrop-blur bg-white/50 text-slate-900 text-center p-8 space-y-4 w-full h-auto sm:w-[400px] sm:h-[700px] sm:m-4 m-4" >
                 <h1 class="text-3xl sm:text-4xl">{{ des.priceName }}</h1>
                 
                 <h3 class="text-slate-400">{{ des.subDescription }}</h3>

@@ -1,6 +1,10 @@
 <template>
     <div class="flex flex-col justify-center items-center bg-cyan-950 py-16">
-        <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight pb-16">What we offer...</h1>
+
+
+        <div class="p-8 mb-16 rounded-lg backdrop-blur bg-slate-100/50 font-bold text-white">
+            <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">What we offer</h1>
+        </div>
 
         <ul class="flex md:flex-row flex-col justify-between sm:w-11/12 w-full">
             <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4  flex-1 backdrop-blur bg-white/10 rounded-lg drop-shadow-lg"> 

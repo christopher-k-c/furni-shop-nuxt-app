@@ -7,6 +7,8 @@
 
     <Pricing></Pricing>
 
+    <Registration></Registration>
+
     <Contact></Contact>
 </template>
 
