@@ -1,10 +1,13 @@
 <template >
-    <div class="flex flex-col justify-center items-center bg-white py-8 ">
+    <div class="flex flex-col justify-center items-center  py-8 relative ">
+        
+        
         <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight ">Our Pricing</h1>
-       
-        <div class="flex md:flex-row flex-col justify-center items-center w-11/12 flex-shrink-0">
-            <div v-for="(des, indx) in priceList" :key="indx" class="rounded-lg bg-cyan-950 text-slate-100 text-center m-4 w-full p-8 space-y-4 " >
+       <!-- flex-shrink-0 flex-grow w-full  -->
+        <div class="flex lg:flex-row flex-col justify-center items-center w-11/12 space-y-4 sm:space-y-0">
+            <div v-for="(des, indx) in priceList" :key="indx" class=" rounded-lg backdrop-blur bg-white/50 text-slate-900 text-center p-8 space-y-4 w-full h-auto sm:w-[400px] sm:h-[700px] sm:m-4" >
                 <h1 class="text-3xl sm:text-4xl">{{ des.priceName }}</h1>
+                
                 <h3 class="text-slate-400">{{ des.subDescription }}</h3>
                 <h1 class="">£ {{ des.priceType }}</h1>
                 <ul class="space-y-4 text-left">
@@ -19,12 +22,12 @@
                         </div>
                     </li>
                 </ul>
-                <button class="bg-black text-white p-2 mt-4"> Get Started </button>
+                <button class="bg-cyan-950 text-white p-2 mt-4"> Get Started </button>
 
             </div>
         </div>
 
-
+        <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute object-cover h-full w-full -z-10" />
 
     </div>
    

@@ -1,12 +1,12 @@
 <template>
-    <div class="flex flex-col justify-center items-center bg-slate-100 py-16">
+    <div class="flex flex-col justify-center items-center bg-cyan-950 py-16">
         <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight pb-16">What we offer...</h1>
 
         <ul class="flex md:flex-row flex-col justify-between sm:w-11/12 w-full">
-            <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4 bg-slate-400/30 flex-1"> 
+            <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4  flex-1 backdrop-blur bg-white/10 rounded-lg drop-shadow-lg"> 
 
                 <div class="w-full h-[250px]">
-                    <img :src="item.featureImg" :alt="item.featureName" class="w-full h-full object-cover">
+                    <img :src="item.featureImg" :alt="item.featureName" class="w-full h-full object-cover rounded-t-lg">
                 </div>
                 <Icon :name="item.featureIcon" size="40" class="m-2"/>
                 <h4 class="m-2 text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-tight md:leading-tight ">{{ item.featureName }}</h4>
