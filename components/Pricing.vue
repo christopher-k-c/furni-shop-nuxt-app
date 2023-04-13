@@ -1,43 +1,61 @@
-<template >
-    <div class="flex flex-col justify-center items-center py-16 relative " name="Pricing" id="Pricing">
-        
-        <div class="p-8 mb-16 rounded-lg backdrop-blur bg-cyan-950/50 font-bold text-white">
-            <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">Our Pricing</h1>
-        </div>
-       <!-- flex-shrink-0 flex-grow w-full  -->
-        <div class="flex lg:flex-row flex-col justify-center items-center w-11/12 space-y-4 sm:space-y-0">
-            <div v-for="(des, indx) in priceList" :key="indx" class=" rounded-lg backdrop-blur bg-white/50 text-slate-900 text-center p-8 space-y-4 w-full h-auto sm:w-[400px] sm:h-[700px] sm:m-4 m-4" >
-                <h1 class="text-3xl sm:text-4xl">{{ des.priceName }}</h1>
-                
-                <h3 class="text-slate-400">{{ des.subDescription }}</h3>
+<template>
+    <div class="w-full relative flex flex-col justify-center items-center font-poppins " name="Pricing" id="Pricing">
 
-                <h1 class="">£ {{ des.priceType }}</h1>
-                
-                <ul class="space-y-4 text-left">
-                    <li v-for="(content, index) in des.contents" :key="index">
-                        <div v-if="content.boo" class="flex items-start space-x-1">
-                            <img src="https://img.icons8.com/color/48/null/checkmark--v1.png" alt="tick" :style="{ width: '20px', height:'20px' }">
-                            <p>{{ content.txt }}: <span>{{ content.info }}</span></p>
-                        </div>
-                        <div v-else="content.boo" class="flex items-start space-x-1">
-                            <img src="https://img.icons8.com/color/48/null/delete-sign--v1.png" alt="cross" :style="{ width: '20px', height:'20px'}" class="mt-1"/>
-                            <p class="text-slate-500">{{ content.txt }}: <span>{{ content.info }}</span></p>
-                        </div>
+
+        <div class="p-8 mb-16 w-full backdrop-blur bg-cyan-950/50 font-bold text-white text-center space-y-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">Our Pricing</h1>
+            <p class="text-2xl sm:text-3xl">We deliver a workspace furnishing service for a subscription fee that keeps things simple and affordable.</p>
+        </div>
+
+
+
+
+        <!-- Cards Container -->
+        <div class="flex flex-col lg:flex-row justify-center items-center  w-full h-full p-4 mb-16">
+
+
+
+            <!-- Individual Cards rendered in container - plus initial for loop to access price name, description and type -->
+            <div v-for="(des, indx) in priceList" :key="indx" class=" flex flex-col bg-slate-100 rounded-lg shadow-md w-full m-6 overflow-hidden backdrop-blur bg-white/50" >
+
+                <div class="font-bold text-center px-2 py-5 text-3xl sm:text-4xl ">{{ des.priceName }}</div>
+
+                <h3 class="text-center px-2 py-5 text-slate-400">{{ des.subDescription }}</h3>
+
+                <h1 class="text-center px-2 pb-5 font-bold">£ {{ des.priceType }}</h1>
+
+                <!-- Nest for to access the array of objects -->
+                <ul v-for="(el, index) in des.contents" :key="index" class="m-4 " >
+
+                    <!-- If true display tick -->
+                    <li v-if="el.boo" class="flex items-start space-x-1 hover:scale-105">
+
+                        <img src="https://img.icons8.com/color/48/null/checkmark--v1.png" alt="tick" :style="{ width: '20px', height:'20px' }">
+                        <p>{{ el.txt }}: <span>{{ el.info }}</span></p>
+
                     </li>
+
+                    <!-- If false display cross -->
+                    <li v-else="el.boo" class="flex items-start space-x-1 hover:scale-105">
+
+                        <img src="https://img.icons8.com/color/48/null/delete-sign--v1.png" alt="cross" :style="{ width: '20px', height:'20px'}" class="mt-1"/>
+                        <p class="text-slate-500">{{ el.txt }}: <span>{{ el.info }}</span></p>
+                    
+                    </li>
+            
                 </ul>
+
                 <button class="bg-cyan-950 text-white p-2 mt-4"> Get Started </button>
 
             </div>
-        </div>
 
-        <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute object-cover h-full w-full -z-10 " />
+        </div>
+        <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute left-0 right-0 top-0 bottom-0 object-cover h-full w-full -z-10 " />
 
     </div>
-   
 </template>
 
 <script>
-
     export default {
         name: "price-list",
         data(){
@@ -47,7 +65,7 @@
                         id: 1,
                         priceName: "Buy",
                         subDescription: "Best option for one time purchase",
-                        priceType: "Fixed",
+                        priceType: "Fixed Price",
                         contents:[
                             {id: 2, boo: true, txt: "shipping", info: "Free Shipping"},
                             {id: 3, boo: false, txt: "design", info: "Custom Designs"},
@@ -62,7 +80,7 @@
                         id: 2,
                         priceName: "Lease",
                         subDescription: "Relevant for short term tenants",
-                        priceType: "Variable",
+                        priceType: "Variable Price",
                         contents:[
                             {id: 2, boo: true, txt: "shipping", info: "Free Shipping"},
                             {id: 3, boo: true, txt: "design", info: "Custom Designs"},
@@ -76,7 +94,7 @@
                         id: 3,
                         priceName: "Subscription",
                         subDescription: "Essential for long term rentals",
-                        priceType: "Variable",
+                        priceType: "Variable Price",
                         contents:[
                             {id: 2, boo: true, txt: "shipping", info: "Free Shipping"},
                             {id: 3, boo: true, txt: "design", info: "Custom Designs"},
@@ -98,5 +116,4 @@
 <style lang="scss" scoped>
 
 </style>
-
-
+   

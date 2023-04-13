@@ -7,10 +7,10 @@
         </div>
 
         <ul class="flex md:flex-row flex-col justify-between sm:w-11/12 w-full">
-            <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4  flex-1 backdrop-blur bg-white/10 rounded-lg drop-shadow-lg"> 
+            <li v-for="item in featuresList" :key="item.id" class="flex flex-col items-start m-4  flex-1 backdrop-blur bg-white/10 rounded-lg drop-shadow-lg overflow-hidden"> 
 
                 <div class="w-full h-[250px]">
-                    <img :src="item.featureImg" :alt="item.featureName" class="w-full h-full object-cover rounded-t-lg">
+                    <img :src="item.featureImg" :alt="item.featureName" class="w-full h-full object-cover rounded-t-lg  hover:scale-105">
                 </div>
                 <Icon :name="item.featureIcon" size="40" class="m-2"/>
                 <h4 class="m-2 text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-tight md:leading-tight ">{{ item.featureName }}</h4>
