@@ -1,9 +1,10 @@
 <template>
 
 <div class="flex flex-col justify-center items-center w-full h-[900px] bg-cyan-950 space-y-4 relative">
-    <div v-if="isLoading" class="absolute left-0 right-0 bottom-0 top-0 z-30 flex justify-center items-center">
-        <h1 class="text-6xl">I am loading</h1>
-    </div>
+<div v-if="showSpinner" class="absolute left-0 right-0 bottom-0 top-0 z-10 flex justify-center items-center bg-slate-600/40">   
+    <atom-spinner  :animation-duration="5000" :size="90" :color="'#ff1d5e'" class="z-30"/>
+</div> 
+
 
     <div class="p-8 mb-16 rounded-lg backdrop-blur bg-slate-100/50 font-bold text-white">
             <h1 class="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">Sign Up!</h1>
@@ -42,6 +43,8 @@
         <input type="password" id="confirmPassword" v-model="registration.confirm" class="rounded-sm w-1/2"/>
 
         <button type="submit" class="bg-black text-white p-4 m-2 drop-shadow-xl font-bold">Register</button>
+
+        
     </form>
    
 </div>
@@ -52,9 +55,11 @@
 
 <script>
 
-
+import {AtomSpinner} from 'epic-spinners';
     export default {
+        
         data(){
+            
             return{
                 registration: {
                     first: '',
@@ -63,40 +68,49 @@
                     password: '',
                     confirm: '',
                 },
-                isLoading: false,
+                showSpinner: false, // Add this boolean property
             }
-        },
+        },  
+        components: {
+    AtomSpinner,
+  },   
         
-        methods:{
-            
+  methods: {
+    async submitForm(event) {
+      // Set showSpinner to true before the form submission
+      this.showSpinner = true;
 
-            submitForm(event) {
-            this.isLoading = true;
-            setTimeout(() => {
-                for (let key in this.registration) {
-                    if (this.registration[key].length == 0) {
-                        console.log(`The ${key} input is empty`);
-                        event.preventDefault();
-                        return;
-                    }
-                }
-
-        if (this.registration.password === this.registration.confirm) {
-            console.log("Form Submission Successful:", this.registration);
-            event.preventDefault();
-            return;
-        } else {
-            console.log("Passwords do not match!", this.registration);
+      for (let key in this.registration) {
+        if (this.registration[key].length === 0) {
+          console.log(`The ${key} input is empty`);
+          event.preventDefault();
+          // Set showSpinner back to false after form validation
+          this.showSpinner = false;
+          return;
         }
-        this.isLoading = false; // Set isLoading to false after the delay
-    }, 2000);
+      }
+
+      if (this.registration.password === this.registration.confirm) {
+        // Delay the form submission for 2 seconds (for demonstration)
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        console.log("Form Submission Successful:", this.registration);
+        event.preventDefault();
+        // Set showSpinner back to false after form submission
+        this.showSpinner = false;
+        return;
+      } else {
+        console.log("Passwords do not match!", this.registration);
+        // Set showSpinner back to false after form validation
+        this.showSpinner = false;
+      }
+    },
+  },
 }
-
-        }
-        
-    }
 </script>
 
 <style lang="scss" scoped>
+
+
 
 </style>

@@ -10,7 +10,9 @@
                 <h1 class="text-3xl sm:text-4xl">{{ des.priceName }}</h1>
                 
                 <h3 class="text-slate-400">{{ des.subDescription }}</h3>
+
                 <h1 class="">£ {{ des.priceType }}</h1>
+                
                 <ul class="space-y-4 text-left">
                     <li v-for="(content, index) in des.contents" :key="index">
                         <div v-if="content.boo" class="flex items-start space-x-1">
@@ -28,7 +30,7 @@
             </div>
         </div>
 
-        <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute object-cover h-full w-full -z-10" />
+        <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute object-cover h-full w-full -z-10 " />
 
     </div>
    

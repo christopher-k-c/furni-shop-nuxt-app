@@ -16,6 +16,7 @@
     "tailwindcss": "^3.3.1"
   },
   "dependencies": {
-    "@types/node": "^18.15.11"
+    "@types/node": "^18.15.11",
+    "epic-spinners": "^2.0.0"
   }
 }

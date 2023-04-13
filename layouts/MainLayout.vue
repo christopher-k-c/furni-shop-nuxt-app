@@ -9,6 +9,8 @@
 
     <Registration></Registration>
 
+    <Price></Price>
+
     <Contact></Contact>
 </template>
 
@@ -17,3 +19,4 @@
         
     }
 </script>
+

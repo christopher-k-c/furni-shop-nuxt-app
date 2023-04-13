@@ -6,3 +6,15 @@
     scrollbar-width: none;
   }
   
+
+@layer base {
+  @font-face {
+    font-family: 'Magilio';
+    src: url('MagilioRegular-Yzv2O.ttf') format('truetype');
+  }
+}
+
+.my-custom-class {
+  font-family: 'Magilio', sans-serif;
+  /* other CSS styles here */
+}

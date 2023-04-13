@@ -1,8 +1,8 @@
 <template>
-    <nav id="TopNav" :class="isToggled ? 'flex justify-start' : ' flex justify-between'" class= "w-full py-6 items-center px-2 relative">
+    <nav id="TopNav" :class="isToggled ? 'flex justify-start' : ' flex justify-between'" class= "w-full py-6 items-center px-2 sticky top-0 bg-white">
         
         <!-- Logo / Title -->
-        <h4 class="font-poppins font-bold uppercase text-cyan-950 px-4 z-10 text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-tight md:leading-tight flex justify-start">
+        <h4 class="font-Magilio font-bold uppercase text-cyan-950 px-4 z-10 text-2xl sm:text-3xl md:text-4xl leading-tight sm:leading-tight md:leading-tight flex justify-start">
             furni.store
         </h4>
 
@@ -10,7 +10,7 @@
         <ul class="list-none md:flex hidden justify-end items-center flex-1">
             <li  v-for="item in NaviagtionList"  :key="item" 
             class="font-poppins font-normal cursor-pointer text-[16px] text-cyan-950 px-4">
-            <a :href="'#' + item">{{ item }}</a>
+            <a :href="'#' + item" class="font-Magilio">{{ item }}</a>
             </li>
         </ul>
         <!-- Icon -->
@@ -23,7 +23,7 @@
             <Icon name="fa-times" size="20" @click="toggle" class="fixed top-7 right-6"/>
             <ul class="flex flex-col justify-center items-center h-full w-full">
                 <li v-for="item in NaviagtionList" :key="item" class="text-[25px] py-4">
-                    <a :href="`#${item}`">
+                    <a :href="`#${item}`" @click="toggle">
                         {{ item }}
                     </a>
                 </li>
@@ -56,6 +56,7 @@
             toggle(){
                 this.isToggled = !this.isToggled // Make the toggle var the opposite eof it's current boolean val
             }
+            
         }
     }
 </script>
