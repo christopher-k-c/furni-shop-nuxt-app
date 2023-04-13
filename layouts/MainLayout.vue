@@ -1,17 +1,25 @@
 <template>
     <TopNav class="z-30"></TopNav>
 
-    <Hero></Hero>
+    <section id="Home">
+        <Hero></Hero>
+    </section>
 
-    <Features></Features>
+    <section id="Features">
+        <Features></Features>
+    </section>
 
-    <Pricing></Pricing>
+    <section id="Pricing">
+        <Pricing></Pricing>
+    </section>
 
-    <Registration></Registration>
+    <section id="Registration">
+        <Registration></Registration>
+    </section>
 
-    <Price></Price>
-
-    <Contact></Contact>
+    <section id="Contact">
+        <Contact></Contact>
+    </section>
 </template>
 
 <script>

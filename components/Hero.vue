@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="w-full flex justify-center items-center"> -->
     <!-- <div class="relative h-screen xl:max-w-[1280px] w-full flex justify-center items-center" name="Home" id="Home"> -->
-    <div class="relative h-screen" name="Home" id="Home">
+    <div class="relative h-screen">
       <div class="absolute inset-0 w-full ">
         <img src="../assets/images/5.jpg" alt="Hero Image" class="object-cover h-full w-full" />
       </div>

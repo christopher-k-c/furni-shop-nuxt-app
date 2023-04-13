@@ -1,12 +1,14 @@
 <template>
 
-    <div class="flex flex-col sm:flex-row sm:justify-around justify-center items-center sm:items-start w-full h-auto bg-black/90 pt-4 pb-4" name="Contact" id="Contact">
+    <div class="flex flex-col sm:flex-row sm:justify-around justify-center items-center sm:items-start w-full h-auto bg-black/90 pt-4 pb-4">
         <!-- List -->
         <ul class="space-y-4 sm:text-none text-center pb-4">
             <h4 class="font-bold text-xl text-cyan-100/90">About</h4>
             <hr>
             <li v-for="item in contact" :key="item" class="flex flex-col text-slate-300">  
-                {{ item }}   
+                <a :href="`#${item}`">
+                    {{ item }}   
+                </a>
             </li>
         </ul>
 
@@ -20,6 +22,27 @@
                     <p class="ml-4 text-slate-300">{{ icon.text }}</p>
                 </a>
             </div>
+        </div>
+
+                <!-- Email -->
+        <div class="flex flex-col space-y-4 sm:text-none text-center pb-4">
+            <h4 class="font-bold text-xl text-cyan-100/90">Contact Us</h4>
+            <hr>
+            <ul>
+                <li class="flex flex-col text-slate-300">
+                    Oxford Circus
+                    <br>
+                    London, 
+                    <br>
+                    WC1 3B4
+                </li>
+                <li class="flex flex-col text-slate-300">
+                    Email: furni@shop.com
+                </li>
+                <li class="flex flex-col text-slate-300">
+                    Phone: 01928739322893
+                </li>
+            </ul>
         </div>
     </div>
 

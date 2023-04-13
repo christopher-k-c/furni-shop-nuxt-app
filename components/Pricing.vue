@@ -1,8 +1,11 @@
 <template>
-    <div class="w-full relative flex flex-col justify-center items-center font-poppins " name="Pricing" id="Pricing">
+
+    <div class="flex justify-center bg-cyan-950/50 relative">
+    
+    <div class="xl:max-w-[1280px] w-full relative flex flex-col justify-center items-center font-poppins ">
 
 
-        <div class="p-8 mb-16 w-full backdrop-blur bg-cyan-950/50 font-bold text-white text-center space-y-4">
+        <div class="p-8 mb-8 w-full backdrop-blur font-bold text-white text-center space-y-4 pt-32">
             <h1 class="text-4xl md:text-5xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight">Our Pricing</h1>
             <p class="text-2xl sm:text-3xl">We deliver a workspace furnishing service for a subscription fee that keeps things simple and affordable.</p>
         </div>
@@ -11,16 +14,16 @@
 
 
         <!-- Cards Container -->
-        <div class="flex flex-col lg:flex-row justify-center items-center  w-full h-full p-4 mb-16">
+        <div class="flex flex-col lg:flex-row justify-center items-center w-full h-full p-4 mb-10 ">
 
 
 
             <!-- Individual Cards rendered in container - plus initial for loop to access price name, description and type -->
-            <div v-for="(des, indx) in priceList" :key="indx" class=" flex flex-col bg-slate-100 rounded-lg shadow-md w-full m-6 overflow-hidden backdrop-blur bg-white/50" >
+            <div v-for="(des, indx) in priceList" :key="indx" class=" flex flex-col bg-slate-100 rounded-lg drop-shadow-lg w-full m-6 overflow-hidden backdrop-blur bg-white/50" >
 
                 <div class="font-bold text-center px-2 py-5 text-3xl sm:text-4xl ">{{ des.priceName }}</div>
 
-                <h3 class="text-center px-2 py-5 text-slate-400">{{ des.subDescription }}</h3>
+                <h3 class="text-center px-2 py-5 text-white">{{ des.subDescription }}</h3>
 
                 <h1 class="text-center px-2 pb-5 font-bold">£ {{ des.priceType }}</h1>
 
@@ -50,9 +53,11 @@
             </div>
 
         </div>
-        <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute left-0 right-0 top-0 bottom-0 object-cover h-full w-full -z-10 " />
+        
 
     </div>
+    <img src="../assets/images/1.jpeg" alt="Hero Image" class="absolute left-0 right-0 top-0 bottom-0 object-cover h-full w-full -z-10 " />
+</div>
 </template>
 
 <script>
